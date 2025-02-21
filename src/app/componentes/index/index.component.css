@@ -1,0 +1,13 @@
+.ifarma{
+  align-items: center;
+  text-align: center;
+  color: aliceblue;
+  /* margin-top: 35vh; */
+  font-size: 50px;
+}
+
+.logo{
+  width: 260px;
+  margin-top: 30vh;
+  margin-left: 86vh;
+}

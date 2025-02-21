@@ -1,0 +1,65 @@
+.corpInf{
+  text-align: center;
+  font-size: 15;
+  color: aliceblue;
+}
+
+.infs{
+  display: flex;
+}
+
+.criarDado{
+  height: 25px;
+  border-radius: 5px;
+  border: none;
+}
+
+.js{
+  display: none;
+  width: 400px;
+  height: 110px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 10px;
+  margin-top: 30px;
+}
+
+.js.abrir{
+  display: block;
+  background: linear-gradient(to bottom, #360101af , #9c02029a);
+}
+
+.pop-up{
+  display: flex;
+  flex-direction: column;
+}
+
+#popUp1{
+  margin-top: 5px;
+  margin-left: 30px;
+}
+
+#popUp2{
+  margin-top: -90px;
+  margin-left: 170px;
+}
+
+.estoque{
+  display: flex;
+  justify-content: center;
+}
+
+.altContEsto{
+  margin-top: 70px;
+}
+
+
+
+.pens {
+  background-color: rgb(114, 76, 10);
+}
+
+.pensa {
+  background-color: rgb(51, 26, 213);
+}
+

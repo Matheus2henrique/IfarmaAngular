@@ -1,0 +1,21 @@
+<div class="container">
+  <h1>Login</h1>
+
+  <form>
+    <label class="text">CPF</label>
+    <input class="input" type="text" placeholder="000.000.000-00" required >
+
+    <label class="text">Senha</label>
+    <input class="input" type="password" placeholder="********" required>
+
+    <h3 class="esquSen" (click)="esqueciSenha()" >Esqueci Senha</h3>
+
+    <div class="caixaLembr">
+      <div class="cx"></div>
+      <h3>Lembar de mim </h3>
+    </div>
+
+    <input (click)="entrar()" type="submit" value="Entrar" class="entrar">
+
+  </form>
+</div>
