@@ -1,0 +1,61 @@
+<main class="corpInf">
+  <h2 style="font-size: 40px;"> Estoque </h2>
+
+  <div class="estoque" [ngClass]="test()" >
+      <form method="get">
+
+      <!-- <div> -->
+          <div class="altContEsto">
+          <label class="infs"> Produto</label>
+             <input type="text" class="criarDado" required>
+
+             <img src="../../../../../assets/imgs/lupa.png" width="40px" class="lp"  id="lupa" (click)="abrirPesq()" >
+
+         </div>
+
+      <!-- </div> -->
+
+          <div class="js" id="js">
+              <div class="pesq">
+
+                  <!-- <h3>Produto</h3> -->
+                  <div class="pop-up" id="popUp1">
+                      <label class="infs">Nome</label>
+                      <br>
+                      <label class="infs">Validade</label>
+                      <br>
+                      <label class="infs">Fornecedor</label>
+                  </div>
+
+                  <div class="pop-up" id="popUp2">
+                      <label class="infs">Quantidade</label>
+                      <br>
+                      <label class="infs">Movimentacao</label>
+                      <br>
+                      <label class="infs">Data Movimentacao</label>
+                  </div>
+
+              </div>
+
+          </div>
+
+      </form>
+  </div>
+
+</main>
+
+<!--
+              <script>
+                  function abrirPesq() {
+                      const conf = document.getElementById('js')
+                      const lupa = document.getElementById('lupa')
+
+                      if(conf.classList.contains('abrir')){
+                          conf.classList.remove('abrir')
+                      }
+                      else{
+                          conf.classList.add('abrir')
+                      }
+
+                  }
+              </script> -->

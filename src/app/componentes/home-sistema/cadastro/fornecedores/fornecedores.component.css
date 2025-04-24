@@ -1,0 +1,46 @@
+.corpInf{
+  text-align: center;
+  font-size: 15;
+  color: aliceblue;
+}
+
+.gps-informacoes{
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+}
+
+h2{
+  margin-top: 150px;
+}
+
+.container{
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+
+#gp-2Forn{
+  margin-left: 40px;
+}
+
+.criarDado{
+  height: 25px;
+  border-radius: 5px;
+  border: none;
+}
+
+.infs{
+  display: flex;
+}
+
+.bttCadastrar{
+  margin-top: 80px;
+  font-size: 15px;
+  width: 130px;
+  height: 34px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+}

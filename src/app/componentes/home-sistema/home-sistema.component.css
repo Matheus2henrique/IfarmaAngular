@@ -1,0 +1,46 @@
+#h2Home {
+  font-size: 30px;
+  color: aliceblue;
+  margin-left: 30px;
+}
+
+.footer-content {
+  display: block;
+  flex-wrap:wrap;
+}
+
+#gps-btt{
+  display: flex;
+  flex-direction:column
+}
+.button-group1{
+  margin-top: 45px;
+  margin-left: 125px;
+}
+.button-group2{
+  margin-left: 32vw;
+  margin-top: -295.5px;
+}
+.button-group3{
+  margin-left: 54vw;
+  margin-top: -223px;
+}
+.button-group4{
+  margin-left: 75vw;
+  margin-top: -285px;
+}
+
+#bttHome {
+  cursor: pointer;
+  margin: 10px;
+  width: 180px;
+  height: 50px;
+  border-radius: 5px;
+  border: none;
+}
+
+.iconPerf{
+  cursor: pointer;
+  margin-top: 60px;
+  margin-left: 80vw;
+}

@@ -1,0 +1,9 @@
+.header{
+  display: flex;
+}
+.logo{
+  width: 80px;
+}
+.ifarma{
+  color: aliceblue;
+}
