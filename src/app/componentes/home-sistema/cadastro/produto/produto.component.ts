@@ -9,6 +9,19 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class ProdutoComponent implements OnInit {
 
+  produto = {
+      nome : '' ,
+      validade : '' ,
+      dataFabricacao : '' ,
+      quantidade : '' ,
+      receita : '' ,
+      descricao : '' ,
+      codigo  : '' ,
+      valor : '' ,
+      lote : '' ,
+      categoria : ''
+  }
+
   constructor(
      private service: JuntarService,
         private router: Router,
@@ -18,7 +31,27 @@ export class ProdutoComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  voltar(){
-    this.router.navigate(['homeSistema']);
+  async cadastrar(){
+
+    const { nome , validade , dataFabricacao , quantidade , receita , descricao , codigo , valor , lote , categoria } = this.produto;
+
+    if( !nome || !validade || !dataFabricacao || !quantidade || !receita || !descricao || !codigo || !valor || !lote || !categoria ){
+        alert("Todos os campos devem ser preenchidos !!" );
+        return;
+    }
+
+    try{
+        const response = await this.service.CadProdutos(this.produto);
+
+        alert("Usuario : " + response.nome + " foi cadastrado com sucesso !");
+
+        this.produto = { nome : '' , validade : '' , dataFabricacao : '' , quantidade : '' , receita : '' , descricao : '' , codigo : '' , valor : '' , lote : '' , categoria : '' }
+        this.router.navigate(['homeSistema']);
+
+    }
+    catch(error : any ){
+      alert("erro ao cadastrar " + error.message );
+    }
+
   }
 }

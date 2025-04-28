@@ -9,6 +9,13 @@ import { JuntarService } from 'src/app/componentes/juntar.service';
 })
 export class FuncionarioComponent implements OnInit {
 
+  funcionario = {
+      nome : '' ,
+      cpf : '' ,
+      status : '' ,
+      senha : ''
+  }
+
   constructor(
      private service: JuntarService,
         private router: Router,
@@ -18,8 +25,28 @@ export class FuncionarioComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  async cadastrar(){
 
-  voltar(){
-    this.router.navigate(['../../homeSistema']);
+    const { nome , cpf , status , senha } = this.funcionario;
+
+    if(!nome || !cpf || !status || !senha){
+      alert('Preencha todos os campos !!');
+      return;
+    }
+
+    try{
+
+      const response = await this.service.CadFuncionarios(this.funcionario);
+
+      alert('Usuario : foi cadastrado com sucesso !!'+ response.nome );
+
+      this.funcionario = { nome : '' , cpf : '' , status : '' , senha : '' };
+      this.router.navigate(['../../homeSistema']);
+
+    }
+    catch(error : any){
+      alert('erro ao cadastrar ' + error.message);
+    }
+
   }
 }

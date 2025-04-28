@@ -10,6 +10,10 @@ import { JuntarService } from '../juntar.service'
 })
 export class LoginComponent implements OnInit {
 
+  login = {
+    cpf : '' ,
+    senha : ''
+  }
 
   constructor(
     private service: JuntarService,
@@ -25,9 +29,25 @@ export class LoginComponent implements OnInit {
     this.router.navigate(['/esqueciSenha']);
   }
 
-  entrar(){
-    alert("Login efetuado com sucesso!");
-    this.router.navigate(['/homeSistema']);
+  async entrar(){
+
+    const{ cpf , senha } = this.login;
+
+    if( !cpf || !senha ){
+      alert("Preencha todos os campos !! ");
+      return;
+    }
+
+    try{
+
+      
+
+      alert("Login efetuado com sucesso!");
+      this.router.navigate(['/homeSistema']);
+    }
+    catch(error : any ){
+      alert("erro ao logar " + error.message);
+    }
   }
 
 }

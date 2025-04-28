@@ -1,24 +1,28 @@
 <main class="corpInf">
   <h2>Cadastrar Funcionario</h2>
-  <form  action="home.html" method="get">
-<div class="container">
-     <div class="gps-informacoes" id="gp-1">
-         <label class="infs">Nome</label>
-         <input type="text" class="criarDado" required>
-         <br>
-         <label class="infs">CPF </label>
-         <input type="text" class="criarDado" required>
+  <form #cadFunc="ngForm" (ngSubmit)="cadastrar()">
+    <div class="container">
+      <div class="gps-informacoes" id="gp-1">
+        <label class="infs">Nome</label>
+        <input type="text" class="criarDado" [(ngModel)]="funcionario.nome" name="nome" required>
+        <br>
+        <label class="infs">CPF</label>
+        <input type="text" class="criarDado" [(ngModel)]="funcionario.cpf" name="cpf" required>
       </div>
 
       <div class="gps-informacoes" id="gp-2">
-          <label class="infs">Servico </label>
-          <input type="text" class="criarDado" required>
-          <br>
-          <label class="infs">Senha </label>
-          <input type="text" class="criarDado" required>
+        <label class="infs">Status</label>
+        <select class="criarDado" [(ngModel)]="funcionario.status" name="status" required>
+          <option value="">Selecione um Status</option>
+          <option value="Administrador">Administrador</option>
+          <option value="Farmaceutico">Farmaceutico</option>
+          <option value="Atendente">Atendente</option>
+        </select>
+        <br>
+        <label class="infs">Senha</label>
+        <input type="password" class="criarDado" [(ngModel)]="funcionario.senha" name="senha" required>
       </div>
-</div>
-      <button type="submit" value="Cadastrar" class="bttCadastrar" (click)="voltar()" >Cadastrar</button>
-
+    </div>
+    <button type="submit" class="bttCadastrar" [disabled]="!cadFunc.valid">Cadastrar</button>
   </form>
 </main>

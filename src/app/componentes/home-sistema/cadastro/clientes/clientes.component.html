@@ -3,22 +3,26 @@
   <form  action="home.html" method="get">
 <div class="container">
      <div class="gps-informacoes" id="gp-1">
-         <label class="infs">Nome</label>
-         <input type="text" id="nome"  class="criarDado" required>
-         <br>
-         <label class="infs">CPF </label>
-         <input type="text" id="cpf" class="criarDado" required>
+
+         <label class="infs">Nome:</label>
+         <input type="text" id="nome" [(ngModel)]="cliente.nome" name="nome" class="criarDado" required>
+
+         <label class="infs">CPF:</label>
+         <input type="text" id="cpf" [(ngModel)]="cliente.cpf" name="cpf" class="criarDado" required>
+
       </div>
 
       <div class="gps-informacoes" id="gp-2">
-          <label class="infs">E-mail </label>
-          <input type="text" id="email" class="criarDado" required>
-          <br>
-          <label class="infs">Telefone </label>
-          <input type="text" id="telefone" class="criarDado" required>
+
+          <label class="infs">Email:</label>
+          <input type="email" id="email" [(ngModel)]="cliente.email" name="email" class="criarDado" required>
+
+          <label class="infs">Telefone:</label>
+          <input type="text" id="telefone" [(ngModel)]="cliente.telefone" name="telefone" class="criarDado" required>
+
       </div>
 </div>
-      <button type="submit" value="Cadastrar" class="bttCadastrar" (click)="voltar()" >Cadastrar</button>
+      <button type="submit" value="Cadastrar" class="bttCadastrar" (click)="cadastrar()" >Cadastrar</button>
 
   </form>
 </main>

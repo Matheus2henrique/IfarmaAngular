@@ -1,42 +1,47 @@
 <main class="corpInf">
   <h2>Controlar Pedido</h2>
-  <form  action="home.html" method="get">
-<div class="container">
-     <div class="gps-informacoes" id="gp-1">
-          <label class="infs">Data do Pedido </label>
-          <input type="text" class="criarDado" required>
-          <br>
-          <label class="infs"> Produto </label>
-          <input type="text" class="criarDado" required>
-          <br>
-          <label class="infs">Statu do Produto</label>
-          <input type="text" class="criarDado" required>
-          <br>
-          <label class="infs">Valor Unitario</label>
-          <input type="text" class="criarDado" required>
-          <br>
-
-              <div class="mudLug">
-                  <label class="infsExe">Responsavel </label>
-                  <input type="text" class="criarDado" required>
-              </div>
+  <form (ngSubmit)="controlarPedido()">
+    <div class="container">
+      <div class="gps-informacoes" id="gp-1">
+        <label class="infs">Data do Pedido</label>
+        <input type="date" [(ngModel)]="pedido.dataPedido" name="dataPedido" class="criarDado" required>
+        <br>
+        <label class="infs">Produto</label>
+        <input type="text" [(ngModel)]="pedido.produto" name="produto" class="criarDado" required>
+        <br>
+        <label class="infs">Status do Produto</label>
+        <select [(ngModel)]="pedido.status" name="statusProd" required>
+          <option value="">Selecione o Status</option>
+          <option value="Pendente">Pendente</option>
+          <option value="Aprovado">Aprovado</option>
+          <option value="Cancelado">Cancelado</option>
+          <option value="Enviado">Enviado</option>
+          <option value="Recebido">Recebido</option>
+        </select>
+        <br>
+        <label class="infs">Valor Unitário</label>
+        <input type="text" [(ngModel)]="pedido.vlrUnitario" name="valorUni" class="criarDado" required>
+        <br>
       </div>
 
       <div class="gps-informacoes" id="gp-2Pedi">
-          <label class="infs">Fornecedor  </label>
-          <input type="text" class="criarDado" required>
-          <br>
-          <label class="infs">Quantidade Pedida </label>
-          <input type="text" class="criarDado" required>
-          <br>
-          <label class="infs">Data de Entrega</label>
-          <input type="text" class="criarDado" required>
-          <br>
-          <label class="infs">Valor Total</label>
-          <input type="text" class="criarDado" required>
+        <label class="infs">Fornecedor</label>
+        <select [(ngModel)]="pedido.fornecedor" name="fornecedor" required>
+          <option value="">Selecione um Fornecedor</option>
+          <option *ngFor="let fornecedor of fornecedores" [value]="fornecedor.id">{{ fornecedor.nome }}</option>
+        </select>
+        <br>
+        <label class="infs">Quantidade Pedida</label>
+        <input type="text" [(ngModel)]="pedido.qtdPedido" name="qtdPedida" class="criarDado" required>
+        <br>
+        <label class="infs">Data de Entrega</label>
+        <input type="date" [(ngModel)]="pedido.dataEntrega" name="dtEntrega" class="criarDado" required>
+        <br>
+        <label class="infs">Valor Total</label>
+        <input type="text" [(ngModel)]="pedido.vlrTotal" name="valorTotal" class="criarDado" required>
       </div>
-</div>
-      <button type="submit" value="Cadastrar" class="bttCadastrar" (click)="voltar()" >Cadastrar</button>
+    </div>
 
+    <button type="submit" class="bttCadastrar">Cadastrar</button>
   </form>
 </main>

@@ -4,28 +4,36 @@
   margin-left: 30px;
 }
 
-.footer-content {
+.main-content {
   display: block;
-  flex-wrap:wrap;
+  flex-wrap: wrap;
+  position: relative;
+  min-height: 100vh;
+  padding: 20px;
+  /* background: linear-gradient(180deg, #8B0000, #4B0000);  */
 }
 
-#gps-btt{
+#gps-btt {
   display: flex;
-  flex-direction:column
+  flex-direction: column;
 }
-.button-group1{
+
+.button-group1 {
   margin-top: 45px;
   margin-left: 125px;
 }
-.button-group2{
+
+.button-group2 {
   margin-left: 32vw;
   margin-top: -295.5px;
 }
-.button-group3{
+
+.button-group3 {
   margin-left: 54vw;
   margin-top: -223px;
 }
-.button-group4{
+
+.button-group4 {
   margin-left: 75vw;
   margin-top: -285px;
 }
@@ -39,8 +47,123 @@
   border: none;
 }
 
-.iconPerf{
+.iconPerf {
   cursor: pointer;
   margin-top: 60px;
   margin-left: 80vw;
+  width: 80px;
+}
+
+@media (max-width: 1024px) {
+  .button-group1 {
+    margin-left: 50px;
+    margin-top: 30px;
+  }
+
+  .button-group2 {
+    margin-left: 50px;
+    margin-top: 20px;
+  }
+
+  .button-group3 {
+    margin-left: 50vw;
+    margin-top: -280px;
+  }
+
+  .button-group4 {
+    margin-left: 50vw;
+    margin-top: 20px;
+  }
+
+  #h2Home {
+    font-size: 26px;
+    margin-left: 20px;
+  }
+
+  #bttHome {
+    width: 160px;
+    height: 45px;
+  }
+
+  .iconPerf {
+    margin-left: 85vw;
+    margin-top: 40px;
+    width: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .button-group1 {
+    margin-left: 10px;
+    margin-top: 20px;
+  }
+
+  .button-group2 {
+    margin-left: 10px;
+    margin-top: 20px;
+  }
+
+  .button-group3 {
+    margin-left: 10px;
+    margin-top: 20px;
+  }
+
+  .button-group4 {
+    margin-left: 10px;
+    margin-top: 20px;
+  }
+
+  #h2Home {
+    font-size: 24px;
+    margin-left: 0;
+    text-align: center;
+  }
+
+  #bttHome {
+    width: 90%;
+    max-width: 200px;
+    height: 45px;
+    margin: 10px auto;
+    display: block;
+  }
+
+  .iconPerf {
+    margin-left: auto;
+    margin-top: 10px;
+    margin-right: 10px;
+    width: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-content {
+    padding: 10px;
+  }
+
+  .button-group1,
+  .button-group2,
+  .button-group3,
+  .button-group4 {
+    margin-left: 5px;
+    margin-top: 15px;
+  }
+
+  #h2Home {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  #bttHome {
+    width: 85%;
+    max-width: 180px;
+    height: 40px;
+    font-size: 13px;
+    margin: 8px auto;
+  }
+
+  .iconPerf {
+    margin-top: 5px;
+    margin-right: 5px;
+    width: 40px;
+  }
 }

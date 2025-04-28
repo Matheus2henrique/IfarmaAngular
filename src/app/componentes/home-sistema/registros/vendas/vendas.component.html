@@ -1,38 +1,52 @@
 <main class="corpInf">
   <h2>Registros Vendas</h2>
-  <form  action="home.html" method="get">
-<div class="container">
-     <div class="gps-informacoes" id="gp-1">
-          <label class="infs">Numero da Venda</label>
-          <input type="text" class="criarDado" required>
-          <br>
-          <label class="infs"> Cliente </label>
-          <input type="text" class="criarDado" required>
-          <br>
-          <label class="infs">
-              Forma de Pagamento
-          </label>
-          <input type="text" class="criarDado" required>
-          <br>
+  <form (ngSubmit)="registrarVenda()">
+    <div class="container">
+      <div class="gps-informacoes" id="gp-1">
+        <label class="infs">Número da Venda</label>
+        <input type="text" class="criarDado" [(ngModel)]="venda.numVenda" name="numVenda" required>
+        <br>
 
-              <div class="mudLug">
-                  <label class="infsExe">Receita </label>
-                  <input type="text" class="criarDado" required>
-              </div>
+        <label class="infs">Cliente</label>
+        <select class="criarDado" [(ngModel)]="venda.cliente" name="cliente" required>
+          <option value="">Selecione o Cliente</option>
+          <option *ngFor="let cliente of clientes" [value]="cliente.id">{{ cliente.nome }}</option>
+        </select>
+        <br>
+
+        <label class="infs">Forma de Pagamento</label>
+        <select class="criarDado" [(ngModel)]="venda.formaPaga" name="formaPaga" required>
+          <option value="">Selecione a Forma de Pagamento</option>
+          <option value="Dinheiro">Dinheiro</option>
+          <option value="Pix">Pix</option>
+          <option value="Débito">Débito</option>
+          <option value="Crédito">Crédito</option>
+        </select>
+        <br>
+
+        <div class="mudLug">
+          <label class="infsExe">Quantidade do Produto </label>
+          <input type="text" class="criarDado" [(ngModel)]="venda.qtdProd" name="qtdProd" required>
+        </div>
       </div>
 
       <div class="gps-informacoes" id="gp-2Vend">
-          <label class="infs">Data da Venda</label>
-          <input type="text" class="criarDado" required>
-          <br>
-          <label class="infs">Medicamento Vendido </label>
-          <input type="text" class="criarDado" required>
-          <br>
-          <label class="infs">Valor Total</label>
-          <input type="text" class="criarDado" required>
-      </div>
-</div>
-      <button type="submit" value="Cadastrar" class="bttCadastrar" (click)="voltar()" >Cadastrar</button>
+        <label class="infs">Data da Venda</label>
+        <input type="date" class="criarDado" [(ngModel)]="venda.dataVenda" name="dataVenda" required>
+        <br>
 
+        <label class="infs">Medicamento Vendido</label>
+        <select class="criarDado" [(ngModel)]="venda.medicamentoVendido" name="medicamentoVendido" required>
+          <option value="">Selecione o Medicamento</option>
+          <option *ngFor="let medicamento of medicamentos" [value]="medicamento.id">{{ medicamento.nome }}</option>
+        </select>
+        <br>
+
+        <label class="infs">Valor Total</label>
+        <input type="text" class="criarDado" [(ngModel)]="venda.vlrTotal" name="vlrTotal" required>
+      </div>
+    </div>
+
+    <button type="submit" class="bttCadastrar">Cadastrar</button>
   </form>
 </main>

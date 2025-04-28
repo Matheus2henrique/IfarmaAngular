@@ -1,42 +1,46 @@
 <main class="corpInf">
   <h2>Cadastrar Produtos</h2>
-  <form  action="home.html" method="get">
-<div class="container">
-     <div class="gps-informacoes" id="gp-1Prod">
-          <label class="infs">Nome</label>
-          <input type="text" class="criarDado" required>
-          <br>
-          <label class="infs">Validade </label>
-          <input type="text" class="criarDado" required>
-          <br>
-          <label class="infs">Data de Fabricacao</label>
-          <input type="text" class="criarDado" required>
-          <br>
-          <label class="infs">Quantidade </label>
-          <input type="text" class="criarDado" required>
-          <br>
-          <label class="infs">Receita Medica</label>
-          <input type="text" class="criarDado" required>
+  <form action="home.html" method="get">
+    <div class="container">
+      <div class="gps-informacoes" id="gp-1Prod">
+        <label class="infs">Nome</label>
+        <input type="text" class="criarDado" required [(ngModel)]="produto.nome" name="nome">
+        <br>
+        <label class="infs">Validade </label>
+        <input type="date" class="criarDado" required [(ngModel)]="produto.validade" name="validade">
+        <br>
+        <label class="infs">Data de Fabricacao</label>
+        <input type="date" class="criarDado" required [(ngModel)]="produto.dataFabricacao" name="dataFabricacao">
+        <br>
+        <label class="infs">Quantidade </label>
+        <input type="text" class="criarDado" required [(ngModel)]="produto.quantidade" name="quantidade">
+        <br>
+
+        <label class="infs">Receita Medica</label>
+        <select class="criarDado" required [(ngModel)]="produto.receita" name="receita">
+          <option value="">Selecione</option>
+          <option value="SIM">Sim</option>
+          <option value="NÃO">Não</option>
+        </select>
       </div>
 
       <div class="gps-informacoes" id="gp-2Prod">
-          <label class="infs">Descricao</label>
-          <input type="text" class="criarDado" required>
-          <br>
-          <label class="infs">Codigo </label>
-          <input type="text" class="criarDado" required>
-          <br>
-          <label class="infs">Valor</label>
-          <input type="text" class="criarDado" required>
-          <br>
-          <label class="infs">Lote </label>
-          <input type="text" class="criarDado" required>
-          <br>
-          <label class="infs">Categotia </label>
-          <input type="text" class="criarDado" required>
+        <label class="infs">Descricao</label>
+        <input type="text" class="criarDado" required [(ngModel)]="produto.descricao" name="descricao">
+        <br>
+        <label class="infs">Codigo </label>
+        <input type="text" class="criarDado" required [(ngModel)]="produto.codigo" name="codigo">
+        <br>
+        <label class="infs">Valor</label>
+        <input type="text" class="criarDado" required [(ngModel)]="produto.valor" name="valor">
+        <br>
+        <label class="infs">Lote </label>
+        <input type="text" class="criarDado" required [(ngModel)]="produto.lote" name="lote">
+        <br>
+        <label class="infs">Categoria </label>
+        <input type="text" class="criarDado" required [(ngModel)]="produto.categoria" name="categoria">
       </div>
-
     </div>
-    <button type="submit" value="Cadastrar" class="bttCadastrar" (click)="voltar()" >Cadastrar</button>
+    <button type="submit" value="Cadastrar" class="bttCadastrar" (click)="cadastrar()">Cadastrar</button>
   </form>
 </main>
